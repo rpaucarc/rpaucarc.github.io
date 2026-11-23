@@ -1,0 +1,23 @@
+titulo: IBPT-STEM
+subtitulo: Problemas del entorno como punto de partida para investigar
+descripcion: La Investigación Basada en Problemas y Tecnología se combina con ciencia, tecnología, ingeniería y matemáticas. Los estudiantes usan indagación, experimentación y programación visual para abordar problemas de su comunidad.
+fases:
+  - Comprender el problema
+  - Planificar las actividades
+  - Ejecutar y experimentar
+  - Revisar la solución
+aplicacion: En abril de 2026, la UNAT informó que más de 30 docentes de los colegios Mariscal Cáceres y Daniel Hernández, en Tayacaja, participaron en una capacitación con el modelo IBPT, el kit STEM y programación por bloques.
+recursos:
+  - nombre: Capacitación docente en Tayacaja
+    medio: UNAT · Nota institucional
+    url: https://www.gob.pe/institucion/unat/noticias/1380481-profesores-de-los-colegios-mariscal-caceres-y-daniel-hernandez-son-capacitados-en-nuevo-modelo-en-ciencia-y-tecnologia-gracias-a-la-unat
+  - nombre: IBPT-STEM en Facebook
+    medio: Facebook · Difusión
+    url: https://www.facebook.com/ibptstem
+  - nombre: IBPT y kit educativo STEM
+    medio: Congreso de la República · Presentación
+    url: https://www.congreso.gob.pe/Docs/comisiones2024/Ciencia/files/presentacioninnovacioneducativa%28unat%29_%282%29.pdf
+foto:
+  ruta: /assets/img/tayacaja-stem.png
+  alt: Jornada de capacitación docente organizada por la UNAT en Tayacaja
+  credito: Capacitación docente en Tayacaja · Foto de la UNAT

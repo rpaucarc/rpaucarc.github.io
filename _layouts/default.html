@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ site.lang | escape }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title | escape }} | Docencia e investigación</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <link rel="canonical" href="{{ '/' | absolute_url }}">
+  <meta property="og:title" content="{{ site.title | escape }}">
+  <meta property="og:description" content="{{ site.description | escape }}">
+  <meta property="og:image" content="{{ site.data.perfil.foto.ruta | absolute_url }}">
+  <meta name="theme-color" content="#111d25">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="top">
+    <div class="shell bar">
+      <a class="brand" href="#inicio">Ronald Paucar <span>Curasma</span></a>
+      <nav aria-label="Navegación principal">
+        <a href="#perfil">Perfil</a><a href="#ibpt-stem">IBPT-STEM</a><a href="#proyectos">Proyectos</a><a href="#formacion">Formación</a><a href="#publicaciones">Publicaciones</a>
+      </nav>
+    </div>
+  </div>
+  <main id="contenido">{{ content }}</main>
+  <footer class="footer">
+    <div class="shell bar"><div><strong>{{ site.data.perfil.nombre | escape }}</strong><p>{{ site.data.perfil.ubicacion | escape }}</p></div>
+    <nav aria-label="Perfiles académicos">{% for link in site.data.perfil.enlaces %}<a href="{{ link.url | escape }}">{{ link.nombre | escape }}</a>{% endfor %}</nav></div>
+  </footer>
+</body>
+</html>

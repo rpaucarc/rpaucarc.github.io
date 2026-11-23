@@ -1,0 +1,32 @@
+nombre: Dr. Ronald Paucar Curasma
+cargo: Docente principal e investigador · UNAT
+ubicacion: Huancavelica, Perú
+titular: Investigación aplicada desde la universidad
+resumen: Trabajo en la intersección de la ingeniería, las telecomunicaciones y la educación. Promuevo IBPT-STEM para que docentes y estudiantes investiguen problemas de su entorno y diseñen soluciones con tecnología.
+foto:
+  ruta: /assets/img/ronald-paucar.jpg
+  alt: Retrato del Dr. Ronald Paucar Curasma
+  fuente: CTI Vitae · Concytec
+bio: >-
+  Mi trayectoria como investigador se ha desarrollado en universidades públicas y centros de investigación del Perú. Coordiné proyectos en el INICTEL-UNI, dirigí la Escuela Profesional de Ingeniería Electrónica de la UNMSM y hoy soy docente principal e investigador de la Universidad Nacional Autónoma de Tayacaja Daniel Hernández Morillo (UNAT), donde coordino el grupo TIC aplicadas a la sociedad.
+internacional: >-
+  He participado en iniciativas con JICA (Japón) y en colaboraciones académicas con instituciones de España y Brasil. Realicé una pasantía de investigación en la Universidad de Santiago de Compostela con financiamiento de FONDECYT. En 2024 fui reconocido como Personaje Ilustre de la Región Huancavelica por mi contribución a la innovación educativa.
+trayectoria:
+  - institucion: UNAT
+    periodo: 2020–actualidad
+    detalle: Docencia e investigación. Docente principal desde 2024 y coordinador del grupo TIC aplicadas a la sociedad.
+  - institucion: UNMSM
+    periodo: 2012–2020
+    detalle: Docencia en telecomunicaciones y dirección de la Escuela Profesional de Ingeniería Electrónica (2019–2020).
+  - institucion: INICTEL-UNI
+    periodo: 2000–2002 y 2005–2017
+    detalle: Coordinación de investigación y desarrollo tecnológico en telecomunicaciones y TIC.
+enlaces:
+  - nombre: CTI Vitae
+    url: https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=0000284
+  - nombre: ORCID
+    url: https://orcid.org/0000-0002-9489-576X
+  - nombre: Google Académico
+    url: https://scholar.google.com/citations?user=MeD-FGcAAAAJ&hl=es
+  - nombre: Scopus
+    url: https://www.scopus.com/authid/detail.uri?authorId=57193604935

@@ -1,0 +1,6 @@
+title: Dr. Ronald Paucar Curasma
+description: Investigación aplicada, tecnología educativa y modelo IBPT-STEM desde Huancavelica, Perú.
+url: https://rpaucarc.github.io
+baseurl: ""
+lang: es-PE
+exclude: [README.md, Gemfile, Gemfile.lock, vendor]

@@ -1,598 +1,92 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Robótica Educativa</title>
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./assets//css/styles.css" />
-    <link
-    rel="shortcut icon"
-    href="assets/img/trick-treat5-img.png"
-    type="image/x-icon"
-  />
-  </head>
-  <body>
-    <!-- #region ENCABEZADO -->
-    <header class="header" id="header">
-      <nav class="nav container">
-        <a href="#" class="nav__logo">
-          <img
-            src="assets/img/trick-treat5-img.png"
-            alt=""
-            class="nav__logo-img"
-          />
-          RoboEdu
-        </a>
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#home" class="nav__link active-link">Inicio</a>
-            </li>
-            <li class="nav__item">
-              <a href="#about" class="nav__link">Acerca</a>
-            </li>
-            <li class="nav__item">
-              <a href="#trick" class="nav__link">Robótica</a>
-            </li>
-            <li class="nav__item">
-              <a href="#new" class="nav__link">Productos nuevos</a>
-            </li>
-            <a href="#" class="button button--ghost">Ayuda</a>
-          </ul>
-          <div class="nav__close" id="nav-close">
-            <i class="bx bx-x"></i>
-          </div>
-          <img src="assets/img/nav-img.png" alt="" class="nav__img" />
-        </div>
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="bx bx-grid-alt"></i>
-        </div>
-      </nav>
-    </header>
-    <!-- #endregion -->
-    <!-- #region Principal-->
-    <main class="main">
-      <!--Menu inicial-->
-      <section class="home container" id="home">
-        <div class="swiper home-swiper">
-          <div class="swiper-wrapper">
-            <!--1 2 3-->
-            <section class="swiper-slide">
-              <div class="home__content grid">
-                <div class="home__group">
-                  <img
-                    src="assets/img/footer1-img.png"
-                    alt=""
-                    class="home__img"
-                  />
-                  <div class="home__indicator"></div>
+---
+layout: default
+---
+{% assign p = site.data.perfil %}
+{% assign model = site.data.ibpt %}
+<header class="hero" id="inicio">
+  <div class="shell hero-grid">
+    <div>
+      <p class="eyebrow">{{ p.cargo | escape }} <span>· {{ p.ubicacion | escape }}</span></p>
+      <h1>{{ p.nombre | escape }}</h1>
+      <p class="lead">{{ p.titular | escape }}</p>
+      <p class="intro">{{ p.resumen | escape }}</p>
+      <div class="actions"><a class="button primary" href="#ibpt-stem">Conocer IBPT-STEM</a><a class="button secondary" href="#publicaciones">Ver publicaciones</a></div>
+    </div>
+    <figure class="portrait"><img src="{{ p.foto.ruta | relative_url }}" alt="{{ p.foto.alt | escape }}" fetchpriority="high"><figcaption>{{ p.foto.fuente | escape }}</figcaption></figure>
+  </div>
+</header>
 
-                  <div class="home__details-img">
-                    <h4 class="home__details-title">La robótica educativa es creatividad”</h4>
-                    <span class="home__details-subtitle">
-                      RoboEdu</span
-                    >
-                  </div>
-                </div>
+<section id="perfil" class="section shell">
+  <p class="eyebrow">Perfil profesional</p>
+  <div class="columns">
+    <div><h2>Trayectoria de investigación</h2><p>{{ p.bio | escape }}</p><p>{{ p.internacional | escape }}</p></div>
+    <ol class="timeline">
+      {% for etapa in p.trayectoria %}
+      <li><span>{{ etapa.periodo | escape }}</span><h3>{{ etapa.institucion | escape }}</h3><p>{{ etapa.detalle | escape }}</p></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
 
-                <div class="home__data">
-                  <h3 class="home__subtitle">Robótica educativa en el centro del Perú</h3>
-                  <h1 class="home__title">
-                    ROBOTICA <br />
-
-                    EDUCATIVA O <br />
-                    ROBOEDU :) !!!
-                  </h1>
-                  <p class="home__description">
-                    En esta web encontrarás temas relacionados a robótica y programación.
-                    Este página ayudará en el fortalecimiento de las habilidades de programación, abstracción, diseño algorítmico en el centro del Perú.
-                  </p>
-
-                  <div class="home__buttons">
-                    <a href="#" class="button"> Reservar ahora</a>
-                    <a href="#" class="button--link button--flex">
-                      Audio grabado
-                      <i class="bx bx-right-arrow-alt button__icon"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="swiper-slide">
-              <div class="home__content grid">
-                <div class="home__group">
-                  <img
-                    src="assets/img/home2-img.png"
-                    alt=""
-                    class="home__img"
-                  />
-                  <div class="home__indicator"></div>
-
-                  <div class="home__details-img">
-                    <h4 class="home__details-title">Kit robótico educativo</h4>
-                    <span class="home__details-subtitle">
-                      Ideal para estudiantes STEM</span
-                    >
-                  </div>
-                </div>
-
-                <div class="home__data">
-                  <h3 class="home__subtitle">Kit robótico completo</h3>
-                  <h1 class="home__title">
-                    KIT <br />
-
-                    ROBÓTICO O <br />
-                    MODULO ROBÓTICO COMOLETO!!!
-                  </h1>
-                  <p class="home__description">
-                    Con este kid robótico desarrollará experiencias completas
-                    con relación a la progrmación y armado de robots
-                    además, los estudiantes se familiarizarán intuitamente.
-                  </p>
-
-                  <div class="home__buttons">
-                    <a href="#" class="button">Reserve ahora</a>
-                    <a href="#" class="button--link button--flex"
-                      >Audio grabado
-                      <i class="bx bx-right-arrow-alt button__icon"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="swiper-slide">
-              <div class="home__content grid">
-                <div class="home__group">
-                  <img
-                    src="assets/img/home3-img.png"
-                    alt=""
-                    class="home__img"
-                  />
-                  <div class="home__indicator"></div>
-
-                  <div class="home__details-img">
-                    <h4 class="home__details-title">Robot araña</h4>
-                    <span class="home__details-subtitle"
-                      >Robot para preuniversitarios</span
-                    >
-                  </div>
-                </div>
-
-                <div class="home__data">
-                  <h3 class="home__subtitle">Módulo Robótico spider</h3>
-                  <h1 class="home__title">
-                    MODULO <br />
-
-                    ROBOTICO <br />
-                    ARAÑA!!!
-                  </h1>
-                  <p class="home__description">
-                    Este módulo de robót está orientado al desarrollo de actividades algorítmicos
-                    así también habilidades de abstracción en los estudiantes
-                    ideal para estudiante preuniversitarios.
-                  </p>
-
-                  <div class="home__buttons">
-                    <a href="#" class="button">Reservar ahora</a>
-                    <a href="#" class="button--link button--flex"
-                      >Audio grabado
-                      <i class="bx bx-right-arrow-alt button__icon"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </section>
-      <!--Categirias-->
-      <section class="section category">
-        <h2 class="section__title">
-          Brindamos los siguientes <br />
-          Talleres
-        </h2>
-
-        <div class="category__container container grid">
-          <div class="category__data">
-            <img
-              src="assets/img/category1-img.png"
-              alt=""
-              class="category__img"
-            />
-            <h3 class="category__title">Robótica</h3>
-            <p class="category__description">
-              Robótica educativa con sensores y actuadores.
-            </p>
-          </div>
-
-          <div class="category__data">
-            <img
-              src="assets/img/category2-img.png"
-              alt=""
-              class="category__img"
-            />
-            <h3 class="category__title">Programación</h3>
-            <p class="category__description">
-              Programación basado en bloques, ideal para niños.
-            </p>
-          </div>
-
-          <div class="category__data">
-            <img
-              src="assets/img/category3-img.png"
-              alt=""
-              class="category__img"
-            />
-            <h3 class="category__title">Pensamiento computacional</h3>
-            <p class="category__description">
-              Fortalecerá sus habilidades de abstracción, algoritmos, etc..
-            </p>
-          </div>
-        </div>
-      </section>
-      <!--Acerca de-->
-      <section class="section about" id="about">
-        <div class="about__container container grid">
-          <div class="about__data">
-            <h2 class="section__title about__title">
-              Acerca de RoboEdu
-              <br />
-              Robótica
-            </h2>
-            <p class="about__description">
-              La roboótica educativa y programación en bloques, fortalece las habilidades del pensamiento computacional en estudiantes de edades tempranas.
-              Por primera vez en el centro del Perú.
-            </p>
-            <a href="#" class="button"> Saber más</a>
-          </div>
-
-          <img src="assets/img/about-img.png" alt="" class="about__img" />
-        </div>
-      </section>
-      <!--Truco o trato-->
-      <section class="section trick" id="trick">
-        <h2 class="section__title">Modelos de robótica</h2>
-
-        <div class="trick__container container grid">
-          <div class="trick__content">
-            <img
-              src="assets/img/trick-treat1-img.png"
-              alt=""
-              class="trick__img"
-            />
-            <h3 class="trick__title">mbot</h3>
-            <span class="trick__subtitle">modelo2</span>
-            <span class="trick__price">S./400.00</span>
-            <button class="button trick__button">
-              <i class="bx bx-cart-alt trick__icon"></i>
-            </button>
-          </div>
-
-          <div class="trick__content">
-            <img
-              src="assets/img/trick-treat2-img.png"
-              alt=""
-              class="trick__img"
-            />
-            <h3 class="trick__title">Zowi</h3>
-            <span class="trick__subtitle">modelo1</span>
-            <span class="trick__price">S./200.00</span>
-            <button class="button trick__button">
-              <i class="bx bx-cart-alt trick__icon"></i>
-            </button>
-          </div>
-
-          <div class="trick__content">
-            <img
-              src="assets/img/trick-treat3-img.png"
-              alt=""
-              class="trick__img"
-            />
-            <h3 class="trick__title">Jimu</h3>
-            <span class="trick__subtitle">Modelo2</span>
-            <span class="trick__price">S./ 150.00</span>
-            <button class="button trick__button">
-              <i class="bx bx-cart-alt trick__icon"></i>
-            </button>
-          </div>
-
-          <div class="trick__content">
-            <img
-              src="assets/img/trick-treat4-img.png"
-              alt=""
-              class="trick__img"
-            />
-            <h3 class="trick__title">Wedo V3</h3>
-            <span class="trick__subtitle">Modelo2</span>
-            <span class="trick__price">S./600:00</span>
-            <button class="button trick__button">
-              <i class="bx bx-cart-alt trick__icon"></i>
-            </button>
-          </div>
-
-          <div class="trick__content">
-            <img
-              src="assets/img/trick-treat5-img.png"
-              alt=""
-              class="trick__img"
-            />
-            <h3 class="trick__title">mBot ranger</h3>
-            <span class="trick__subtitle">Modelo1</span>
-            <span class="trick__price">S./700.00</span>
-            <button class="button trick__button">
-              <i class="bx bx-cart-alt trick__icon"></i>
-            </button>
-          </div>
-
-          <div class="trick__content">
-            <img
-              src="assets/img/trick-treat6-img.png"
-              alt=""
-              class="trick__img"
-            />
-            <h3 class="trick__title">RoboTec</h3>
-            <span class="trick__subtitle">Modelo4</span>
-            <span class="trick__price">S./60.00</span>
-            <button class="button trick__button">
-              <i class="bx bx-cart-alt trick__icon"></i>
-            </button>
-          </div>
-        </div>
-      </section>
-      <!--Descuentos-->
-      <section class="section discount">
-        <div class="discount__container container grid">
-          <div class="discount__data">
-            <h2 class="discount__title">
-              50% de descuento <br />
-
-              Sobre nuevos productos
-            </h2>
-            <a href="#" class="button">Ir a nuevo</a>
-          </div>
-
-          <img src="assets/img/discount-img.png" alt="" class="discount__img" />
-        </div>
-      </section>
-      <!--Nuevos items-->
-      <section class="section new" id="new">
-        <h2 class="section__title">Los recién llegados</h2>
-
-        <div class="new__container container">
-          <div class="swiper new-swiper">
-            <div class="swiper-wrapper">
-              <div class="new__content swiper-slide">
-                <div class="new__tag">Nuevo</div>
-                <img src="assets/img/new1-img.png" alt="" class="new__img" />
-                <h3 class="new__title">Robot ranger</h3>
-                <span class="new__subtitle">Modelo3</span>
-
-                <div class="new__prices">
-                  <span class="new__price">S./14.99</span>
-                  <span class="new__discount">S./29.99</span>
-                </div>
-
-                <button class="button new__button">
-                  <i class="bx bx-cart-alt new__icon"></i>
-                </button>
-              </div>
-
-              <div class="new__content swiper-slide">
-                <div class="new__tag">Nuevo</div>
-                <img src="assets/img/new2-img.png" alt="" class="new__img" />
-                <h3 class="new__title">Robot Jim</h3>
-                <span class="new__subtitle">Modelo2</span>
-
-                <div class="new__prices">
-                  <span class="new__price">S./11.99</span>
-                  <span class="new__discount">S./21.99</span>
-                </div>
-
-                <button class="button new__button">
-                  <i class="bx bx-cart-alt new__icon"></i>
-                </button>
-              </div>
-
-              <div class="new__content swiper-slide">
-                <div class="new__tag">Nuevo</div>
-                <img src="assets/img/new3-img.png" alt="" class="new__img" />
-                <h3 class="new__title">Witch Hat</h3>
-                <span class="new__subtitle">Accessory</span>
-
-                <div class="new__prices">
-                  <span class="new__price">$4.99</span>
-                  <span class="new__discount">$9.99</span>
-                </div>
-
-                <button class="button new__button">
-                  <i class="bx bx-cart-alt new__icon"></i>
-                </button>
-              </div>
-
-              <div class="new__content swiper-slide">
-                <div class="new__tag">New</div>
-                <img src="assets/img/new4-img.png" alt="" class="new__img" />
-                <h3 class="new__title">Rip</h3>
-                <span class="new__subtitle">Accessory</span>
-
-                <div class="new__prices">
-                  <span class="new__price">$24.99</span>
-                  <span class="new__discount">$44.99</span>
-                </div>
-
-                <button class="button new__button">
-                  <i class="bx bx-cart-alt new__icon"></i>
-                </button>
-              </div>
-
-              <div class="new__content swiper-slide">
-                <div class="new__tag">New</div>
-                <img src="assets/img/new5-img.png" alt="" class="new__img" />
-                <h3 class="new__title">Terrifying Crystal Ball</h3>
-                <span class="new__subtitle">Accessory</span>
-
-                <div class="new__prices">
-                  <span class="new__price">$5.99</span>
-                  <span class="new__discount">$12.99</span>
-                </div>
-
-                <button class="button new__button">
-                  <i class="bx bx-cart-alt new__icon"></i>
-                </button>
-              </div>
-
-              <div class="new__content swiper-slide">
-                <div class="new__tag">Nuevo</div>
-                <img src="assets/img/new6-img.png" alt="" class="new__img" />
-                <h3 class="new__title">robot mBot</h3>
-                <span class="new__subtitle">modelo1</span>
-
-                <div class="new__prices">
-                  <span class="new__price">S./120.99</span>
-                  <span class="new__discount">S./140.99</span>
-                </div>
-
-                <button class="button new__button">
-                  <i class="bx bx-cart-alt new__icon"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--Suscribirse-->
-      <section class="section newsletter">
-        <div class="newsletter__container container">
-          <h2 class="section__title">Para mas promociones de nuestros productos</h2>
-          <p class="newsletter__description">
-            Promoción de nuevos productos y ventas. Directamente por el siguiente correo
-          </p>
-
-          <form action="" class="newsletter__form">
-            <input
-              type="text"
-              placeholder="Enter your email"
-              class="newsletter__input"
-            />
-            <button class="button">Inscribirse</button>
-          </form>
-        </div>
-      </section>
-    </main>
-    <!--Pie de pagina-->
-    <footer class="footer section">
-      <div class="footer__container container grid">
-        <div class="footer__content">
-          <a href="#" class="footer__logo">
-            <img src="assets/img/logo.png" alt="" class="footer__logo-img" />
-            RoboEdu
-          </a>
-
-          <p class="footer__description">
-            Robótica educativa para el futuro <br />
-            de sus hijos.
-          </p>
-
-          <div class="footer__social">
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              class="footer__social-link"
-            >
-              <i class="bx bxl-facebook"></i>
-            </a>
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              class="footer__social-link"
-            >
-              <i class="bx bxl-instagram-alt"></i>
-            </a>
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              class="footer__social-link"
-            >
-              <i class="bx bxl-twitter"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="footer__content">
-          <h3 class="footer__title">Acerca</h3>
-
-          <ul class="footer__links">
-            <li>
-              <a href="#" class="footer__link">Acerca de nosotros</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Características</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Nuevos</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer__content">
-          <h3 class="footer__title">Nuevos servicios</h3>
-
-          <ul class="footer__links">
-            <li>
-              <a href="#" class="footer__link">Precios</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Descuentos</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Modos de envío</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer__content">
-          <h3 class="footer__title">Nuestra compañia</h3>
-
-          <ul class="footer__links">
-            <li>
-              <a href="#" class="footer__link">Blog</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Acerca de nosotros</a>
-            </li>
-            <li>
-              <a href="#" class="footer__link">Nuestra misión</a>
-            </li>
-          </ul>
-        </div>
+<section id="ibpt-stem" class="feature">
+  <div class="shell section">
+    <p class="eyebrow">Innovación educativa</p>
+    <h2>{{ model.titulo | escape }}</h2>
+    <div class="columns feature-grid">
+      <div>
+        <h3>{{ model.subtitulo | escape }}</h3>
+        <p>{{ model.descripcion | escape }}</p>
+        <ol class="steps">{% for fase in model.fases %}<li>{{ fase | escape }}</li>{% endfor %}</ol>
+        <p>{{ model.aplicacion | escape }}</p>
       </div>
+      <figure class="field"><img src="{{ model.foto.ruta | relative_url }}" alt="{{ model.foto.alt | escape }}" width="645" height="363" loading="lazy"><figcaption>{{ model.foto.credito | escape }}</figcaption></figure>
+    </div>
+    <ul class="resource-grid">
+      {% for recurso in model.recursos %}
+      <li><a href="{{ recurso.url | escape }}"><span>{{ recurso.medio | escape }}</span><strong>{{ recurso.nombre | escape }}</strong></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
 
-      <span class="footer__copy">&#169; Página Robótica Educativa</span>
+<section id="proyectos" class="section shell">
+  <p class="eyebrow">Investigación financiada</p>
+  <h2>Proyectos y subvenciones</h2>
+  <div class="project-grid">
+    {% for proyecto in site.data.proyectos %}
+    <article class="project">
+      <p class="meta">{{ proyecto.apoyo | escape }} · {{ proyecto.periodo | escape }}</p>
+      <h3>{{ proyecto.titulo | escape }}</h3>
+      <p>{{ proyecto.detalle | escape }}</p>
+      <a href="{{ proyecto.url | escape }}" aria-label="Consultar fuente de {{ proyecto.titulo | escape }}">Consultar fuente</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
 
-      <img src="assets/img/footer1-img.png" alt="" class="footer__img-one" />
-      <img src="assets/img/footer2-img.png" alt="" class="footer__img-two" />
-    </footer>
-    <!-- #endregion -->
-    <a href="#" class="scrollup" id="scroll-up">
-      <i class="bx bx-up-arrow-alt scrollup__icon"></i>
-    </a>
+<section id="formacion" class="muted">
+  <div class="section shell columns">
+    <div><p class="eyebrow">Formación educativa</p><h2>Grados y estudios</h2></div>
+    <ul class="degrees">
+      {% for estudio in site.data.formacion %}
+      <li><h3>{{ estudio.grado | escape }}</h3><p>{{ estudio.institucion | escape }}</p></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
 
-    <!--Scroll para que se revelen los elementos de forma suave-->
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-
-    <!--Deslizar elementos en una lista-->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-    <script src="./assets/js/main.js"></script>
-  </body>
-</html>
+<section id="publicaciones" class="section shell">
+  <p class="eyebrow">Producción científica</p>
+  <h2>Publicaciones seleccionadas</h2>
+  <form class="filters" role="search" hidden>
+    <label>Buscar publicaciones<input type="search" placeholder="Título, revista o tema" id="paper-search"></label>
+    <label>Año<select id="paper-year"><option value="">Todos los años</option>{% assign years = site.data.publicaciones | map: 'anio' | uniq | sort | reverse %}{% for year in years %}<option>{{ year }}</option>{% endfor %}</select></label>
+    <p id="paper-count" role="status"></p>
+  </form>
+  <ol class="papers">
+    {% assign papers = site.data.publicaciones | sort: 'anio' | reverse %}
+    {% for paper in papers %}
+    <li data-year="{{ paper.anio }}"><span class="year">{{ paper.anio }}</span><div><h3><a href="{{ paper.url | escape }}">{{ paper.titulo | escape }}</a></h3><p>{{ paper.revista | escape }} · {{ paper.tema | escape }}</p></div></li>
+    {% endfor %}
+  </ol>
+</section>
